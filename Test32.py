@@ -1,4 +1,5 @@
 import math
+import random
 def isPrime(x):
     if x<=1:
         return False
@@ -10,6 +11,22 @@ def isPrime(x):
         if x%i==0 or x%(i+2)==0 :
             return False
     return True
+
+def nghichDao(a,p):
+    u = a
+    v = p
+    x1 = 1
+    x2 = 0
+    while u!=1 :
+        q = int(v/u)
+        r = v-q*u
+        x = x2 - q*x1
+        v = u
+        u = r
+        x2 = x1
+        x1 = x
+    return x1
+
 def binhPhuongCoLap(a,k,n):
     b=1
     if k==0 :
@@ -24,6 +41,7 @@ def binhPhuongCoLap(a,k,n):
         if int(binK[i])==1 :
             b=(A*b)%n
     return b
+
 def timUocChungLonNhat(a,b):
     if a>b:
         tmp =a
@@ -34,26 +52,30 @@ def timUocChungLonNhat(a,b):
         a=b
         b=r
     return a
-def isCarmichael(n):
-    if isPrime(n):
-        return False
-    b = 2
-    while b<n:
-        if timUocChungLonNhat(b,n)==1 :
-            u = binhPhuongCoLap(b,n-1,n)
-            if u !=1:
-                return False
-        b+=1
-    return True
 
 def main():
     while True:
-        n = int(input())
-        if n>=0 and n<=10000 :
+        p = random.randint(101,499)
+        q = random.randint(101,499)
+        if isPrime(p) and isPrime(q):
             break
-    for i in range(2,n):
-        if isCarmichael(i):
-            print(i)
-
+    n = p*q
+    phiN = (p-1)*(q-1)
+    while True:
+        e = random.randint(2,phiN-1)
+        if timUocChungLonNhat(e,phiN)==1:
+            break
+    d = nghichDao(e,phiN)
+    if d<0:
+        d+=phiN
+    m = 247 + 123
+    c = binhPhuongCoLap(m,e,n)
+    # kq = binhPhuongCoLap(c,d,n)
+    print("p = ",p)
+    print("q = ",q)
+    print("e = ",e)
+    print("m = ",m)
+    print("c = ",c)
+    
 if __name__ == '__main__':
     main()
