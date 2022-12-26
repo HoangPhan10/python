@@ -11,7 +11,7 @@ def isPrime(x):
             return False
     return True
 def timUocChungLonNhat(a,b):
-    if a>b:
+    if a<b:
         tmp =a
         a=b
         b=tmp

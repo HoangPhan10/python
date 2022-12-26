@@ -1,8 +1,11 @@
 import math
 def main():
-    m = int(input())
-    n = int(input())
-    d = int(input())
+    while True:
+        m = int(input())
+        n = int(input())
+        d = int(input())
+        if m>0 and n>0 and d>0  and d<1000 and m<1000 and n <=1000:
+            break
     if d>n:
         print("Not found")
         return

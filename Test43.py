@@ -40,9 +40,7 @@ def main():
     for i in range(1,n):
         if isPrime(binhPhuongCoLap(i,p,n)):
             print(i)
-
         
-
 
 if __name__ == '__main__':
     main()

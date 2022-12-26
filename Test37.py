@@ -10,7 +10,7 @@ def main():
         for j in range(1,i+1) :
             arrStr1.append(s1[0:j])
             arrStr2.append(s1[j:i])
-            likeArr=""
+        likeArr=""
         for i in range(0,len(arrStr2)):
             if arrStr2[i] in arrStr1 :
                 likeArr = arrStr2[i]

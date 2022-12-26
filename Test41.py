@@ -26,10 +26,18 @@ def binhPhuongCoLap(a,k,n):
     return b
 
 def main():
-    a = int(input())
-    k = int(input())
-    n = int(input())
-
+    while True:
+        a = int(input("a = "))
+        if a >0 :
+            break
+    while True:
+        n = int(input("n = "))
+        if n > 0 and n <1000 :
+            break
+    while True :
+        k = int(input("k = "))
+        if k>0 and k<n :
+            break
     if isPrime(binhPhuongCoLap(a,k,n)) :
         print("So nguyen to")
         return

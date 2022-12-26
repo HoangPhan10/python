@@ -26,12 +26,10 @@ def main():
 
     e = pow(2,8)
     for i in range(t) :
-        d = arrA[i] - arrB[i] -epsilon
-        if d < 0 :
-            d+=e
-            epsilon = 1
-        else : epsilon =0
-        x = d%e    
+        s = arrA[i] + arrB[i] + epsilon
+        x = s%e
+        if s>e: epsilon = 1
+        else: epsilon = 0
         result.append(x)
     print(result[::-1])    
     print(a+b)    

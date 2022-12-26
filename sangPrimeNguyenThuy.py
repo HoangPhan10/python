@@ -9,17 +9,14 @@ def sang(n):
         if prime[i] :
             for j in range(i*i,n+1,i):
                 prime[j] = False
-    result = []
     for i in range(0,n+1):
         if prime[i]:
-            result.append(i)
-    return result   
+            print (i)    
+    
 def main():
     n = int(input())
-    listPrime = sang(1,n)
-    for i in range(0,len(listPrime)-1):
-        if listPrime[i+1]-listPrime[i]==2:
-            print(listPrime[i],listPrime[i+1])
+    sang(n)
+
 
 if __name__ == '__main__':
     main()

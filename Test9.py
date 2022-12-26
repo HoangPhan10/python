@@ -1,23 +1,21 @@
 import math
-def isPrime(x):
-    if x<=1:
-        return False
-    if x==2 or x==3:
-        return True
-    if x%2==0 or x%3==0:
-        return False
-    for i in range(5,int(math.sqrt(x))+1,6):
-        if x%i==0 or x%(i+2)==0 :
-            return False
-    return True
-def sang(l,r):
-   for i in range(l,r+1):
-        if isPrime(i): 
-            print(i)
+def sang(n):
+    prime = []
+    for i in range(0,n+1):
+        prime.append(True)
+    prime[0] = False
+    prime[1] =False
+    for i in range(2,math.ceil(math.sqrt(n+1))):
+        if prime[i] :
+            for j in range(i*i,n+1,i):
+                prime[j] = False
+    for i in range(0,n+1):
+        if prime[i]:
+            print (i)    
 
 def main():
     n = int(input())
-    sang(1,n)
+    sang(n)
 
 if __name__ == '__main__':
     main()

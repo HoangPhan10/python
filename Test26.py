@@ -12,7 +12,10 @@ def isPrime(x):
     return True
 
 def main():
-    n = int(input())
+    while True:
+        n = int(input())
+        if n<10000 :
+            break
     print("result")
     for i in range(1,n+1):
         for j in range(1,int(math.sqrt(i))+1):

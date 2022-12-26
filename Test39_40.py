@@ -31,7 +31,7 @@ def main():
     sum = 0
     for i in range(0,n):
         for j in range(0,n):
-            if listIn[i]>listIn[j] and isPrime(timUocChungLonNhat(listIn[i],listIn[j])):
+            if listIn[i]>=listIn[j] and isPrime(timUocChungLonNhat(listIn[i],listIn[j])):
                 print(listIn[i],listIn[j])
                 sum+=1
     print(sum)

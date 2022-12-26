@@ -21,7 +21,6 @@ def fermat(n,t):
     if n %2==0 :
         return False
     a = 2
-    result = []
     for i in range(1,t+1):
         x = binhPhuongCoLap(a,n-1,n)
         a+=1

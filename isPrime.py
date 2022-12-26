@@ -12,6 +12,7 @@ def isPrime(x):
     print("nguyento")
     return True
 def main():
-    isPrime(881)
+    n = int(input())
+    isPrime(n)
 if __name__ == "__main__":
     main()

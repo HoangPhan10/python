@@ -10,10 +10,19 @@ def isPrime(x):
         if x%i==0 or x%(i+2)==0 :
             return False
     return True
-def sang(l,r):
+def sang(n):
+    prime = []
+    for i in range(0,n+1):
+        prime.append(True)
+    prime[0] = False
+    prime[1] =False
+    for i in range(2,math.ceil(math.sqrt(n+1))):
+        if prime[i] :
+            for j in range(i*i,n+1,i):
+                prime[j] = False
     result = []
-    for i in range(l,r+1):
-        if isPrime(i): 
+    for i in range(0,n+1):
+        if prime[i]:
             result.append(i)
     return result
 
